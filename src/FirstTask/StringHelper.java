@@ -74,7 +74,7 @@ public class StringHelper {
     private static boolean CheckForException(String string) throws Exception {
         Pattern pattern = Pattern.compile("\\d{4}-[a-zA-Zа-яА-Я]{3}-\\d{4}-[a-zA-Zа-яА-Я]{3}-\\d[a-zA-Zа-яА-Я]\\d[a-zA-Zа-яА-Я]");
         Matcher matcher = pattern.matcher(string);
-        if (string.length() > 22 || string.length() < 22 || !matcher.matches()) {
+        if (string.length() != 22 || !matcher.matches()) {
             throw new Exception("Not a suitable format for string!");
         }
         return true;
